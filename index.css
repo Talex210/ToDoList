@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+html {
+    background: #C0C0C0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 97vw;
+    height: 97vh;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+}
+
+.enterRow {
+    display: flex;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+#add-task-button, #input-task, #task-list {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+#input-task {
+    border: none;
+    border-bottom: 0.15em solid #3A3B3C;
+    border-radius: 0.15em;
+    width: 20em;
+    background: #C0C0C0;
+}
+
+#add-task-button {
+    background-color: #3A3B3C;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.delete-btn {
+    background-color: #0C090A;
+    height: 1.2em;
+    width: 1.2em;
+    font-size: 1em;
+    color: #FFFF00;
+    border-radius: 1em;
+}
+
+.checkbox {
+    transform: scale(2.5);
+    cursor: grab;
+}
+
+#task-list {
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2em;
+}
+
+label {
+    display: none;
+}
+
+.checkbox {
+    width: 1em;
+}
+
+.task {
+    width: 17em;
+}
+
+.delete-btn {
+    width: 1.2em;
+}
+
+input[type=checkbox] + span {
+    text-decoration: none;
+}
+
+input[type=checkbox]:checked + span {
+    text-decoration: line-through #FFFF00;
+}
