@@ -6,8 +6,9 @@ html {
 
 body {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    align-content: center;
     font-family: 'Caveat', cursive;
 }
 
@@ -73,37 +74,29 @@ ul {
     cursor: grabbing;
 }
 
-#task-list {
-    width: 60vw;
-    display: flex;
-    flex-direction: column;
+.task-list {
+    /*width: 60vw;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
     /*justify-content: center;*/
-    align-items: center;
-    align-content: center;
+    /*align-items: center;*/
+    /*align-content: center;*/
 }
 
 li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 2em;
+    height: 6vw;
 }
 
 label {
     display: none;
 }
 
-/*.checkbox {
-    width: 1em;
-}*/
-
 .task {
-    width: 17em;
+    width: 60vw;
 }
-
-/*.delete-btn {
-    !*width: 1.2em;*!
-}*/
 
 input[type=checkbox] + span {
     text-decoration: none;
