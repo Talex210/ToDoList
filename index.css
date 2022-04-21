@@ -8,7 +8,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     font-family: 'Caveat', cursive;
 }
 
@@ -48,7 +47,7 @@ ul {
     list-style-type: none;
 }
 
-.delete-btn { /*вернуться к настройке при изминение не корректно*/
+.delete-btn {
     background-color: #0C090A;
     width: 3.5vw;
     /*height: 5vw;*/
@@ -74,10 +73,10 @@ ul {
     cursor: grabbing;
 }
 
-.task-list {
+#task-list {
     /*width: 60vw;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
+    display: flex;
+    flex-direction: column;
     /*justify-content: center;*/
     /*align-items: center;*/
     /*align-content: center;*/
@@ -85,7 +84,7 @@ ul {
 
 li {
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
     height: 6vw;
 }
@@ -95,7 +94,7 @@ label {
 }
 
 .task {
-    width: 60vw;
+    width: 54vw;
 }
 
 input[type=checkbox] + span {
