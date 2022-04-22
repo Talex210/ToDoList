@@ -104,3 +104,62 @@ input[type=checkbox] + span {
 input[type=checkbox]:checked + span {
     text-decoration: line-through #FFFF00;
 }
+
+@media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 20vw;
+    }
+
+    #add-task-button, #input-task, #task-list {
+        /*font-family: 'Caveat', cursive;*/
+        /*font-weight: 600;*/
+        font-size: 3vw;
+    }
+
+    #input-task {
+        /*border: none;*/
+        border-bottom: 0.5vw solid #3A3B3C;
+        border-radius: 0.5vw;
+        width: 60vw;
+        /*background: #C0C0C0;*/
+    }
+
+    .delete-btn {
+        /*background-color: #0C090A;*/
+        width: 3.5vw;
+        /*height: 5vw;*/
+        font-size: 2.5vw;
+        /*text-align: center;*/
+        /*color: #FFFF00;*/
+        border-radius: 3vw;
+        /*cursor: grab;*/
+        /*font-weight: 600;*/
+    }
+
+    /*.delete-btn:active {
+        cursor: grabbing;
+    }*/
+
+    .checkbox {
+        width: 3vw;
+        height: 3vw;
+        /*cursor: grab;*/
+    }
+
+    li {
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+        /*align-items: center;*/
+        height: 6vw;
+    }
+
+    /*label {
+        display: none;
+    }*/
+
+    .task {
+        width: 54vw;
+    }
+
+}
