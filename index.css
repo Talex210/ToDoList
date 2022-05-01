@@ -87,7 +87,8 @@ label {
 }
 
 .task {
-    width: 65vw;
+    width: 66vw;
+    margin-left: 1vw;
 }
 
 input[type=checkbox] + span {
