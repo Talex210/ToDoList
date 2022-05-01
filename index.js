@@ -40,6 +40,7 @@ document.getElementById('add-task-button').addEventListener('click', function ()
         allInput = document.querySelectorAll('input');
         localStorage.setItem('tasks', JSON.stringify(taskList));
         del();
+        location.reload();
     }
 });
 
@@ -51,6 +52,7 @@ function del() {
             allLi[i - 1].remove();
             taskList.splice(i - 1, 1);
             localStorage.setItem('tasks', JSON.stringify(taskList));
+            location.reload();
         });
     }
 }
