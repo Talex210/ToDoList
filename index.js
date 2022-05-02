@@ -26,12 +26,12 @@ document.getElementById('add-task-button').addEventListener('click', function ()
         li.innerHTML = '<label for = \'checkbox' + checkboxNumber + '\'></label>' +
             '          <input type = \'checkbox\' id = \'checkbox' + checkboxNumber + '\' class = \'checkbox\'>' +
             '          <span class = \'task\'>' + inputTask.value + '</span>' +
-            '          <button class = \'delete-btn\'>X</button>';
+            '          <button class = \'delete-btn\'>del</button>';
         ul.append(li);
         taskList.push('<label for = \'checkbox' + checkboxNumber + '\'></label>' +
             '          <input type = \'checkbox\' id = \'checkbox' + checkboxNumber + '\' class = \'checkbox\'>' +
             '          <span class = \'task\'>' + inputTask.value + '</span>' +
-            '          <button class = \'delete-btn\'>X</button>');
+            '          <button class = \'delete-btn\'>del</button>');
         allButton = document.querySelectorAll('button');
         allLi = document.querySelectorAll('li');
         checkboxNumber++;
