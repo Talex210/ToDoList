@@ -29,7 +29,7 @@ h1 {
     /*font-family: 'Roboto', sans-serif;*/
     font-family: 'Hi Melody', cursive;
     /*font-weight: 600;*/
-    font-size: 4.5vw;
+    font-size: 6vw;
 }
 
 #input-task {
@@ -59,7 +59,7 @@ ul {
 .delete-btn {
     background-color: #fff;
     width: 9vw;
-    font-size: 4vw;
+    font-size: 7vw;
     color: #3c0a3c;
     border-radius: 1.5vw;
     cursor: grab;
@@ -88,7 +88,7 @@ ul {
 li {
     display: flex;
     align-items: center;
-    height: 10vw;
+    height: 11vw;
 }
 
 label {
@@ -96,7 +96,7 @@ label {
 }
 
 .task {
-    width: 66vw;
+    width: 58vw;
     margin-left: 1vw;
     color: #fff;
 }
@@ -109,38 +109,87 @@ input[type=checkbox]:checked + span {
     text-decoration: line-through #3c0a3c;
 }
 
-@media only screen and (min-width: 1700px) {
+@media only screen and (min-width: 1700px) { /*мобильный широкий экран*/
 
     h1 {
         font-size: 6vw;
     }
 
     #add-task-button, #input-task, #task-list {
-        font-size: 2vw;
+        font-size: 3vw;
     }
 
     #input-task {
-        border-bottom: 0.5vw solid #3A3B3C;
-        border-radius: 0.5vw;
-        width: 60vw;
+        /*border-bottom: 0.5vw solid #3A3B3C;*/
+        border-radius: 1.5vw;
+        width: 50vw;
+    }
+
+    #add-task-button {
+        width: 15vw;
+        /*border-radius: 1.5vw;*/
     }
 
     .delete-btn {
-        width: 3.5vw;
-        font-size: 2.5vw;
-        border-radius: 3vw;
+        width: 6vw;
+        font-size: 3vw;
+        /*border-radius: 3vw;*/
     }
 
     .checkbox {
-        width: 2vw;
-        height: 2vw;
+        width: 2.5vw;
+        height: 2.5vw;
     }
 
     li {
-        height: 4vw;
+        height: 6vw;
     }
 
     .task {
-        width: 57vw;
+        width: 47vw;
+    }
+}
+
+@media (max-height: 1100px) { /*настройки для пк*/
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #task-list {
+        font-size: 4vw;
+    }
+
+    #input-task {
+        /*border-bottom: 0.5vw solid #3A3B3C;*/
+        border-radius: 1.5vw;
+        width: 50vw;
+        height: 3vw;
+        font-size: 3vw;
+    }
+
+    #add-task-button {
+        height: 3.8vw;
+        font-size: 3vw;
+        width: 12vw;
+    }
+
+    .delete-btn {
+        width: 5vw;
+        font-size: 3vw;
+        /*border-radius: 3vw;*/
+    }
+
+    .checkbox {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    li {
+        height: 5vw;
+    }
+
+    .task {
+        width: 45vw;
     }
 }
