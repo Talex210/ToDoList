@@ -1,12 +1,14 @@
 let ul = document.getElementById('task-list');
-// restoring an array from memory
 let taskList = [];
 taskList = JSON.parse(localStorage.getItem('tasks')) || [];
+
+// restoring an array from memory
 for (let i = 0; i < taskList.length; i++) {
     let li = document.createElement('li');
     li.innerHTML = taskList[i];
     ul.append(li);
 }
+
 let allInput = document.querySelectorAll('input');
 let inputTask = document.getElementById('input-task');
 let checkboxNumber = 1;
@@ -14,13 +16,17 @@ let allButton = document.querySelectorAll('button');
 let allLi = document.querySelectorAll('li');
 let allSpan = document.querySelectorAll('span');
 let checkboxList = [];
+inputTask.focus();
+
+// restoring checks
 checkboxList = JSON.parse(localStorage.getItem('check')) || [];
 for (let i = 0; i < allInput.length - 1; i++) {
     if (checkboxList[i] && allInput.length > 1) {
         allInput[i + 1].checked = true;
     }
 }
-document.getElementById('add-task-button').addEventListener('click', function () {
+
+const addTask = () => {
     if (inputTask.value !== '') {
         let li = document.createElement('li');
         li.innerHTML = '<label for = \'checkbox' + checkboxNumber + '\'></label>' +
@@ -42,10 +48,20 @@ document.getElementById('add-task-button').addEventListener('click', function ()
         del();
         location.reload();
     }
-});
+}
+
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'Enter') {
+        addTask();
+    }
+})
+
+document.getElementById('add-task-button').addEventListener('click', function () {
+    addTask();
+})
 
 // remove <Li>
-function del() {
+const del = () => {
     for (let i = 1; i < allButton.length; i++) {
         allButton[i].addEventListener('click', function () {
             checkboxNumber--;
@@ -53,13 +69,13 @@ function del() {
             taskList.splice(i - 1, 1);
             localStorage.setItem('tasks', JSON.stringify(taskList));
             location.reload();
-        });
+        })
     }
 }
 
 del();
 
-function taskCompleted() {
+const taskCompleted = () => {
     allInput = document.querySelectorAll('input');
     for (let i = 1; i < allInput.length; i++) {
         checkboxList[i - 1] = allInput[i].checked;
