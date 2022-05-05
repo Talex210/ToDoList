@@ -1,6 +1,8 @@
 let ul = document.getElementById('task-list');
 let taskList = [];
 let checkboxNumber = 0;
+
+// restoring check
 checkboxNumber = JSON.parse(localStorage.getItem('checks'))
 if (checkboxNumber === null) {
     checkboxNumber = 0;
@@ -16,25 +18,16 @@ for (let i = 0; i < taskList.length; i++) {
 
 let allImg = document.querySelectorAll('img');
 let inputTask = document.getElementById('input-task');
-// let checkboxNumber = 1;
 let allButton = document.querySelectorAll('button');
 let allLi = document.querySelectorAll('li');
 let allSpan = document.querySelectorAll('span');
-// let checkboxList = [];
 inputTask.focus();
-
-// restoring checks
-/*checkboxList = JSON.parse(localStorage.getItem('check')) || [];
-for (let i = 0; i < allImg.length - 1; i++) {
-    if (checkboxList[i] && allImg.length > 1) {
-        allImg[i].checked = true;
-    }
-}*/
 
 const addTask = () => {
     if (inputTask.value !== '') {
-        let task = '<img src = \'/img/notDone.png\' alt = \'not done\' id = \'checkbox' + checkboxNumber + '\' class = \'checkbox\' onclick=\'changeImg()\'/>' +
-            '<span class = \'task\'>' + inputTask.value + '</span>' +
+        let task = '<img src = \'img/notDone.png\' alt = \'not done\' id = \'checkbox' + checkboxNumber + '\' ' +
+            'class = \'checkbox\' onclick= \'changeImg(' + checkboxNumber + ')\'/>' +
+            '<span class = \'task\' id = \'span' + checkboxNumber + '\' >' + inputTask.value + '</span>' +
             '<button class = \'delete-btn\'>X</button>'
         let li = document.createElement('li');
         li.innerHTML = task;
@@ -48,7 +41,6 @@ const addTask = () => {
         allImg = document.querySelectorAll('img');
         localStorage.setItem('tasks', JSON.stringify(taskList));
         localStorage.setItem('checks', JSON.stringify(checkboxNumber));
-        // del();
         location.reload();
     }
 }
@@ -63,15 +55,19 @@ document.getElementById('add-task-button').addEventListener('click', function ()
     addTask();
 })
 
-const changeImg = () => {
-    // document.getElementById('checkbox1').src = '/img/done.png';
-    for (let i = 0; i < allImg.length; i++) {
-             // изминение масства с true false
-            allImg[i].src = '/img/done.png';
-            taskList[i] = taskList[i].replace('notD', 'd');
-            taskList[i] = taskList[i].replace('not ', '');
-            localStorage.setItem('tasks', JSON.stringify(taskList));
-            // location.reload();
+const changeImg = (i) => {
+    if (document.getElementById(`checkbox${i}`).alt !== 'done') {
+        document.getElementById(`checkbox${i}`).src = 'img/done.png';
+        document.getElementById(`checkbox${i}`).alt = 'done';
+        taskList[i] = taskList[i].replace('notD', 'd'); //скорей всего будет проблема со счетчиком, после обновления страничке пререзаписывать по порядку
+        taskList[i] = taskList[i].replace('not ', ''); // changeImg[i], checkbox[i]
+        localStorage.setItem('tasks', JSON.stringify(taskList));
+    } else {
+        document.getElementById(`checkbox${i}`).src = 'img/notDone.png';
+        document.getElementById(`checkbox${i}`).alt = 'not done';
+        taskList[i] = taskList[i].replace('img/done', 'img/notDone'); //скорей всего будет проблема со счетчиком, после обновления страничке пререзаписывать по порядку
+        taskList[i] = taskList[i].replace('done', 'not done'); // changeImg[i], checkbox[i]
+        localStorage.setItem('tasks', JSON.stringify(taskList));
     }
 }
 
