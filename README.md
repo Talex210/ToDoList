@@ -1,7 +1,7 @@
 # Description
 
 ---
-## [Open 'To-Do list'](https://talex210.github.io/ToDoList/)
+## [Open 'To-Do list'](https://talex210.github.io/ToDoListWithMemory/)
 
 ### - add a case to the `ADD TASK` button *||* `ENTER` *||* `NumpadEnter` *;*
 ### - mark the task as completed *=>* the completed task is crossed out *;*
