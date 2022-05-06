@@ -33,7 +33,7 @@ h1 {
     margin-top: 1vw;
 }
 
-#add-task-button, #input-task, #task-list {
+#add-task-button, #input-task, #task-list, #clear {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     font-size: 6vw;
@@ -58,7 +58,7 @@ h1 {
     outline: none;
 }
 
-#add-task-button {
+#add-task-button, #clear {
     background-color: #56b1ba;
     color: #221831;
     cursor: grab;
@@ -70,6 +70,11 @@ h1 {
 
 #add-task-button:active {
     cursor: grabbing;
+}
+
+#clear {
+    font-size: 3vw;
+    width: 15vw;
 }
 
 li {

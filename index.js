@@ -16,12 +16,15 @@ let allLi = document.querySelectorAll('li');
 let allSpan = document.querySelectorAll('span');
 inputTask.focus();
 let checkboxNumber = allImg.length;
+let clearAll = document.getElementById('clear')
 
 // doing the numbering in order.
 for (let i = 0; i < allImg.length; i++) {
     allImg[i].id = `checkbox${i}`;
     allImg[i].setAttribute('onclick', `changeImg(${i})`)
 }
+
+taskList.length === 0 ? clearAll.style.display = 'none' : clearAll.style.display = 'block';
 
 const addTask = () => {
     if (inputTask.value !== '') {
@@ -44,13 +47,13 @@ const addTask = () => {
     }
 }
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', (event) => {
     if (event.code === 'Enter' || event.code === 'NumpadEnter') {
         addTask();
     }
 })
 
-document.getElementById('add-task-button').addEventListener('click', function () {
+document.getElementById('add-task-button').addEventListener('click', () => {
     addTask();
 })
 
@@ -72,7 +75,7 @@ const changeImg = (i) => {
 
 // remove <Li>
 const del = () => {
-    for (let i = 1; i < allButton.length; i++) {
+    for (let i = 1; i < allButton.length - 1; i++) {
         allButton[i].addEventListener('click', function () {
             allLi[i - 1].remove();
             taskList.splice(i - 1, 1);
@@ -83,3 +86,8 @@ const del = () => {
 }
 
 del();
+
+clearAll.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+})
