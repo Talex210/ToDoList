@@ -10,18 +10,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*display: grid;
-    grid-template-areas:
-    'h'
-    'e'
-    't';
-    grid-template-rows: 2fr 1fr 10fr;
-    justify-items: center;*/
-    /*grid-gap: 1.25vw;*/
 }
 
 h1 {
-    /*grid-area: h;*/
     font-family: 'Pacifico', cursive;
     font-size: 12vw;
     color: #ffcc33;
@@ -31,16 +22,13 @@ h1 {
 }
 
 .enterRow {
-    /*grid-area: e;*/
     display: flex;
     gap: 1vw;
     align-items: center;
 }
 
 #task-list {
-    /*grid-area: t;*/
-    display: flex;
-    flex-direction: column;
+    list-style-type: none;
 }
 
 #add-task-button, #input-task, #task-list {
@@ -51,7 +39,6 @@ h1 {
 
 #input-task {
     border: none;
-    /*border-bottom: 0.75vw solid #3A3B3C;*/
     border-radius: 1.5vw;
     width: 65vw;
     background: #aab2b2;
@@ -74,31 +61,19 @@ h1 {
     cursor: grab;
     width: 21vw;
     border-radius: 1.5vw;
+    border-color: #ffcc33;
 }
 
 #add-task-button:active {
     cursor: grabbing;
 }
 
-ul {
-    list-style-type: none;
-}
-
-.delete-btn {
+li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #7dbec9;
-    width: 9vw;
-    font-size: 7vw;
-    color: #221831;
-    border-radius: 1.5vw;
-    cursor: grab;
-    font-weight: 800;
-}
-
-.delete-btn:active {
-    cursor: grabbing;
+    justify-content: space-between;
+    /*height: 11vw;*/
+    /*width: 70vw;*/
 }
 
 .checkbox {
@@ -112,20 +87,33 @@ ul {
     cursor: grabbing;
 }
 
-li {
+.task {
+    width: 48vw;
+    margin-left: 1vw;
+    color: #221831;
+}
+
+.delete-btn {
     display: flex;
     align-items: center;
-    height: 11vw;
+    justify-content: center;
+    background-color: #7dbec9;
+    width: 9vw;
+    font-size: 7vw;
+    color: #221831;
+    border-radius: 1.5vw;
+    cursor: grab;
+    font-weight: 800;
+    border-color: #ffcc33;
+    margin-left: 1vw;
+}
+
+.delete-btn:active {
+    cursor: grabbing;
 }
 
 label {
     display: none;
-}
-
-.task {
-    width: 58vw;
-    margin-left: 1vw;
-    color: #221831;
 }
 
 img[alt='not done'] + span {
@@ -136,8 +124,8 @@ img[alt='done'] + span {
     text-decoration: line-through #56b1ba 0.2em;
 }
 
-@media only screen and (min-width: 1700px) {
-    /*мобильный широкий экран*/
+@media only screen and (min-width: 1700px) { /*мобильный широкий экран*/
+
     h1 {
         font-size: 6vw;
     }
@@ -147,7 +135,6 @@ img[alt='done'] + span {
     }
 
     #input-task {
-        /*border-bottom: 0.5vw solid #3A3B3C;*/
         border-radius: 1.5vw;
         width: 50vw;
     }
@@ -169,16 +156,16 @@ img[alt='done'] + span {
     }
 
     li {
-        height: 6vw;
+        /*height: 6vw;*/
     }
 
     .task {
-        width: 47vw;
+        /*width: 47vw;*/
     }
 }
 
-@media (max-height: 1100px) {
-    /*настройки для пк*/
+@media (max-height: 1100px) { /*настройки для пк*/
+
     h1 {
         font-size: 8vw; /*!*/
     }
@@ -188,15 +175,12 @@ img[alt='done'] + span {
     }
 
     #input-task {
-        /*border-bottom: 0.5vw solid #3A3B3C;*/ /*!*/
         border-radius: 1vw;
         width: 50vw;
-        /*height: 3vw;*/ /*!*/
         font-size: 3vw;
     }
 
     #add-task-button {
-        /*height: 3.8vw;*/ /*!*/
         font-size: 3vw; /*!*/
         width: 15vw;
         border-radius: 1vw;
@@ -215,10 +199,10 @@ img[alt='done'] + span {
     }
 
     li {
-        height: 5vw;
+        /*height: 5vw;*/
     }
 
     .task {
-        width: 45vw;
+        width: 48vw;
     }
 }
