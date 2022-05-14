@@ -8,4 +8,4 @@
 ### - delete a task on the `X` button *;*
 ### - *if (*there is a task*) {* displayed `Clear All`*};*
 ### - adaptability to screen width *;*
-### - the task and marks are not deleted *=>* saved in localStorage*;*
+### - the task and marks are not deleted *=>* saved in localStorage *;*
